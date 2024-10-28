@@ -1,0 +1,430 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.App {
+  width: 100%;
+  max-width: 1000px; /* Increased from 800px to 1000px */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.centered-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 300px; /* Doubled from 150px to 300px */
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  width: 100%;
+}
+
+h1 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s;
+  margin-right: 10px;
+}
+
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff; /* Changed to a standard blue color */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue for hover state */
+}
+
+button:disabled {
+  background-color: #cccccc;
+}
+
+.error {
+  color: red;
+}
+
+.analysis {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+/* Add these new styles */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4285F4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button:hover {
+  background-color: #357AE8;
+}
+
+.logo-container {
+  padding: 20px;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #e9ecef;
+}
+
+.login-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.stock-analysis {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.app-header {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.user-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px; /* This adds space between the buttons */
+}
+
+.sign-out-btn,
+.dark-mode-toggle,
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sign-out-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.sign-out-btn:hover {
+  background-color: #c82333;
+}
+
+.dark-mode-toggle {
+  background-color: #6c757d;
+  color: white;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px 0;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.app-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.app-logo img {
+  max-width: 200px;
+  height: auto;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.score-bar {
+  height: 10px;
+  background-color: #ddd;
+  margin-top: 5px;
+}
+
+.nav-bar {
+  background-color: #333;
+  padding: 1rem 0;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-content a {
+  color: white;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.nav-content a:hover {
+  color: #ddd;
+}
+
+.portfolio {
+  padding: 2rem;
+}
+
+.add-stock-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.add-stock-form input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.portfolio-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.portfolio-list th,
+.portfolio-list td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.portfolio-list th {
+  background-color: #f5f5f5;
+}
+
+.dark-mode .nav-bar {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .portfolio-list th {
+  background-color: #333;
+}
+
+.dark-mode .portfolio-list td {
+  border-bottom: 1px solid #444;
+}
+
+/* Add these styles to your existing CSS */
+.remove-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: #bd2130;
+}
+
+.dark-mode .remove-btn {
+  background-color: #c82333;
+}
+
+.dark-mode .remove-btn:hover {
+  background-color: #a71d2a;
+}
