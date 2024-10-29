@@ -19,12 +19,7 @@ function StockAnalysis({ user }) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 30000);
       
-      const currentUser = auth.currentUser;
-      if (!currentUser) {
-        throw new Error('User not authenticated');
-      }
-      
-      const idToken = await currentUser.getIdToken();
+      const idToken = await user.getIdToken();
       
       const response = await fetch(`http://localhost:5000/api/analyze/${symbol}`, {
         signal: controller.signal,
@@ -49,9 +44,6 @@ function StockAnalysis({ user }) {
     } catch (err) {
       if (err.name === 'AbortError') {
         setError('Request timed out. Please try again.');
-      } else if (err.message === 'User not authenticated') {
-        setError('Please sign in again');
-        auth.signOut();
       } else {
         console.error('Analysis error:', err);
         setError(err.message || 'Failed to connect to server');
@@ -62,14 +54,8 @@ function StockAnalysis({ user }) {
     }
   };
 
-  const formatNumber = (value, key = '') => {
+  const formatNumber = (value) => {
     if (typeof value === 'number') {
-      if (['Debt to Equity', 'Return on Equity', 'Revenue Growth', 'Dividend Yield'].includes(key)) {
-        return `${(value * 100).toFixed(2)}%`;
-      }
-      if (value > 1000000) {
-        return `${(value / 1000000).toFixed(2)}M`;
-      }
       return value.toFixed(2);
     }
     return 'N/A';
@@ -124,7 +110,7 @@ function StockAnalysis({ user }) {
                 <ul>
                   {Object.entries(metrics).map(([key, value]) => (
                     <li key={key}>
-                      {key}: {formatNumber(value, key)}
+                      {key}: {formatNumber(value)}
                     </li>
                   ))}
                 </ul>
@@ -143,6 +129,7 @@ function StockAnalysis({ user }) {
 StockAnalysis.propTypes = {
   user: PropTypes.shape({
     displayName: PropTypes.string.isRequired,
+    getIdToken: PropTypes.func.isRequired
   }).isRequired
 };
 
