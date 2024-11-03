@@ -1,0 +1,160 @@
+.portfolio {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.add-stock-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-stock-form input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #1a1a1a;
+  color: white;
+  outline: none;
+}
+
+.add-stock-form input::placeholder {
+  color: #888;
+}
+
+.add-stock-form input:focus {
+  border-color: #9eda9b;
+}
+
+.add-stock-form button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #9eda9b;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-stock-form button:hover {
+  background-color: #8bc989;
+}
+
+.add-stock-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.portfolio-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #1a1a1a;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.portfolio-cell {
+  flex: 1;
+  color: #ddd;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-cell .sold-button {
+  width: auto;
+  margin: 0;
+}
+
+.portfolio-item {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  border: 1px solid #333;
+  color: white;
+  flex: 0 0 auto;
+  width: 200px;
+}
+
+.portfolio-item h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.portfolio-item p {
+  color: #ddd;
+}
+
+.error {
+  color: #ff6b6b;
+  margin: 10px 0;
+}
+
+/* Update specific widths for each input */
+.add-stock-form input[placeholder="Stock Symbol"] {
+  width: 150px;  /* Increased from 120px */
+  flex: 0 0 auto;
+}
+
+.add-stock-form input[placeholder="Number of Shares"] {
+  width: 170px;  /* Increased from 140px */
+  flex: 0 0 auto;
+}
+
+.add-stock-form input[placeholder="Purchase Price"] {
+  width: 150px;  /* Increased from 120px */
+  flex: 0 0 auto;
+}
+
+.sold-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 12px;
+  background-color: #e64152;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.sold-button:hover {
+  background-color: #d63142;
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #1a1a1a;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #333;
+}
+
+.header-item {
+  flex: 1;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.header-item:last-child,
+.portfolio-cell:last-child {
+  justify-content: center;
+}

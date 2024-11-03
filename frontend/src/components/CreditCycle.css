@@ -1,0 +1,213 @@
+.credit-cycle {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: white;
+}
+
+.cycle-selector {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cycle-selector h2 {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.stage-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stage-buttons button {
+  padding: 10px 20px;
+  background-color: #2d2d2d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.stage-buttons button:hover {
+  background-color: #8bc989;
+}
+
+.stage-buttons button.active {
+  background-color: #9eda9b;
+  color: black;
+}
+
+.stage-info {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.stage-info h3 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.characteristics {
+  margin-bottom: 30px;
+}
+
+.characteristics h4, .recommended-sectors h4 {
+  color: white;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+}
+
+.characteristics ul {
+  list-style: none;
+  padding: 0;
+}
+
+.characteristics li {
+  padding: 8px 0;
+  color: #ddd;
+  border-bottom: 1px solid #333;
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.sector-card {
+  background-color: #2d2d2d;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.sector-card h5 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.sector-card p {
+  color: #ddd;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.current-analysis {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin-bottom: 30px;
+}
+
+.current-analysis h2 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.rate-analysis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.current-rates, .cycle-indication {
+  background-color: #2d2d2d;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.current-rates h3, .cycle-indication h3 {
+  color: white;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;
+}
+
+.current-rates ul {
+  list-style: none;
+  padding: 0;
+}
+
+.current-rates li {
+  color: #ddd;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.indicated-stage {
+  color: #9eda9b;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.indication-reason {
+  color: #ddd;
+  line-height: 1.4;
+}
+
+.error {
+  color: #e64152;
+  text-align: center;
+}
+
+.portfolio-analysis {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin: 30px 0;
+}
+
+.portfolio-analysis h2 {
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.analysis-section {
+  background-color: #2d2d2d;
+  padding: 15px;
+  border-radius: 4px;
+  border: 1px solid #333;
+}
+
+.analysis-section h3 {
+  color: white;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;
+}
+
+.analysis-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.analysis-section li {
+  color: #ddd;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+  line-height: 1.4;
+}
+
+.analysis-section strong {
+  color: #9eda9b;
+} 
