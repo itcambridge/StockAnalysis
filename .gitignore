@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+
+# Node
+node_modules/
+build/
+.env
+
+# IDE
+.vs/
+.vscode/
+.idea/
+
+# Firebase
+*firebase-adminsdk*.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.txt
+!requirements.txt
+!package.txt
+
+# Old versions
+frontendold/
+
+# Misc
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.pyc
+
+# Backend
+backend/serviceAccountKey.json
+
+# Firebase config
+frontend/src/firebase.js
+src/firebase.js
+
+# Add these lines to your existing .gitignore
+ValueViewer/obj/
+git
+main
+type
