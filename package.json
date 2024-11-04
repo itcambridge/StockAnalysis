@@ -1,1 +1,19 @@
- 
+{
+  "name": "stock-analysis",
+  "version": "1.0.0",
+  "description": "Stock Analysis App with AI Insights",
+  "scripts": {
+    "start": "DANGEROUSLY_DISABLE_HOST_CHECK=true HOST=0.0.0.0 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "install-deps": "cd frontend && npm install"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2"
+  }
+} 

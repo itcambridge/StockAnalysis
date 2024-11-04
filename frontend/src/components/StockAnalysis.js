@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { auth } from '../firebase';
+import { analyzeStock } from '../services/api';
 import './StockAnalysis.css';
 
 function StockAnalysis() {
@@ -8,54 +8,18 @@ function StockAnalysis() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const analyzeStock = async () => {
+  const handleAnalyze = async (e) => {
+    e.preventDefault();
     if (!symbol) return;
-    
+
     setLoading(true);
     setError(null);
-    
     try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 30000);
-      
-      const currentUser = auth.currentUser;
-      if (!currentUser) {
-        throw new Error('User not authenticated');
-      }
-      
-      const idToken = await currentUser.getIdToken();
-      
-      const response = await fetch(`http://localhost:5000/api/analyze/${symbol}`, {
-        signal: controller.signal,
-        headers: {
-          'Authorization': `Bearer ${idToken}`,
-          'Content-Type': 'application/json'
-        }
-      });
-      
-      clearTimeout(timeoutId);
-      const data = await response.json();
-      
-      if (response.ok) {
-        if (!data.statistics || typeof data.statistics !== 'object') {
-          throw new Error('Invalid data format received from server');
-        }
-        setAnalysis(data);
-      } else {
-        setError(data.error || 'Failed to analyze stock');
-        setAnalysis(null);
-      }
-    } catch (err) {
-      if (err.name === 'AbortError') {
-        setError('Request timed out. Please try again.');
-      } else if (err.message === 'User not authenticated') {
-        setError('Please sign in again');
-        auth.signOut();
-      } else {
-        console.error('Analysis error:', err);
-        setError(err.message || 'Failed to connect to server');
-      }
-      setAnalysis(null);
+      const data = await analyzeStock(symbol);
+      setAnalysis(data);
+    } catch (error) {
+      console.error('Error:', error);
+      setError('Failed to analyze stock. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -102,7 +66,7 @@ function StockAnalysis() {
             disabled={loading}
           />
           <button 
-            onClick={analyzeStock} 
+            onClick={handleAnalyze} 
             disabled={loading || !symbol.trim()}
             style={{ cursor: loading || !symbol.trim() ? 'not-allowed' : 'pointer' }}
           >
